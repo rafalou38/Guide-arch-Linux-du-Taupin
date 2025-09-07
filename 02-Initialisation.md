@@ -1,17 +1,16 @@
 # Pré-configuration
-Ça y est t'est sur Arch, dans un environnement temporaire di "live".
+Ça y est t'es sur Arch, dans un environnement temporaire dit "live".
 Tu est **root** donc pas besoin de `sudo`.
 Avant de continuer il faut configurer le clavier, l'internet et l'heure.
 
 ## Clavier
-Si t'as un clavier qwerty c'est bon
-sinon
+Si t'as un clavier qwerty c'est bon, sinon tape la commande :
 ```sh
 $: loadkeys fr
 ```
 
 
-## Connection internet
+## Connexion internet
 Plusieurs options s'offrent à toi:
 1. Tu branches un cable Ethernet
 2. Tu connectes ton tel et tu fais un partage de co par USB
@@ -51,9 +50,9 @@ ping ping.archlinux.org
 
 <details>
 
-<summary>ça marche pas</summary>
+<summary>ça ne marche pas</summary>
 
-#### Si ça marche pas
+#### Si ça ne marche pas
 ```
 ip link
 ```
