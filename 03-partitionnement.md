@@ -1,9 +1,9 @@
 
 # Partitionnement
-C'est la partie la plus chiante et qu'il faut surtout pas rater.
+C'est la partie la plus chiante et qu'il ne faut surtout pas rater.
 
-La je présente l'option la plus simple: effacer un disque et installer linux dessus.
-Tu peux aussi faire du dual boot mais plus compliqué.
+Là je présente l'option la plus simple: effacer un disque et installer linux dessus.
+Tu peux aussi faire du dual boot mais c'est plus compliqué.
 
 ## Trouve quel disque formater
 
@@ -11,7 +11,7 @@ Tu peux aussi faire du dual boot mais plus compliqué.
 $: lsblk
 ```
 
-Tu cherche le chemin du disque
+Tu cherches le chemin du disque
 => `/dev/sdX` si c'est un disque dur
 => `/dev/nvme0n1` si c'est un SSD
 
@@ -25,11 +25,11 @@ nvme0n1     259:0    0 931.5G  0 disk
 └─nvme0n1p3 259:3    0 914.5G  0 part /
 ```
 
-## Récupérer tes fichiers
+## Récupére tes fichiers
 Si c'est déjà fait ou que t'en a pas, saute cette étape
 
-Trouve d'abord la partition qui a tes fichiers
-Puis tu fais
+Sinon, trouve d'abord la partition qui a tes fichiers
+Puis fais
 ```sh
 $: mkdir /mnt/part
 # remplace partition par ta partition, nvme0n1p3 dans l'exemple juste au dessus.
@@ -83,7 +83,7 @@ En gros t'as des fonctionnalités en plus qui le rendent plus safe mais c'est un
 | `/home`   | EXT4   | Dossier utilisateur |
 
 ##### /swap
-Le **Swap** est une partition ou va être stoqué de la RAM dans deux cas:
+Le **Swap** est une partition où va être stocké de la RAM dans deux cas:
 1. Tu mets ton PC en hibernation
 	1. Manuellement
 	2. Si tu fermes le capot de ton PC portable
