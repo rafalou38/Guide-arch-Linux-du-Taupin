@@ -121,8 +121,31 @@ Tout le reste peut partir dans `/home`
 ```sh
 $: fdisk /dev/sdX
 ```
+Choix de du type de table de partiton: GPT ou MBR
+**GPT** est plus moderne et doiti etre choisi dans la plus part des cas.
+Tapper `g`.
+`o` pour MBR.
 
-TODO
+Pour créer un partition, tappe `n`
+S'il demande le type de partiton: primary `p` pour toutes.
+Laisser le numero par default.
+
+Pour chaque partition il demande la position du debut de la partition et de la fin. Laisser debut par defaut et pour la fin utiliser +4G pour une partition de 4 Go (+taille{M,G,T,P})
+
+### Types de partition
+Utilise `t` pour changner le type de chaque partition affiche les avec `L`.
+Cherche le type qui te semble le plus adapte':
+`uefi` pour ESP (partiton boot)
+`home` pour la paartition home
+`swap` pour la swap
+et `linux` pour les autres.
+
+Si systeme EFI (standard sur les PC recents) la partition boot doditi etre `EFI system`
+
+Sinon `BIOS boot` pour les systemes BIOS avec GPT.
+
+Enfin, affiche les changements avec `p`, annule avec `q` ou enregistre avec `w`.
+
 
 ## Formatage
 ```sh
@@ -130,6 +153,7 @@ TODO
 $: mkfs.ext4 /dev/partition_root
 $: mkfs.ext4 /dev/partition_home
 $: mkfs.fat -F 32 /dev/partition_boot
+# La partition swap n'a pas besoin d'etre formate'e
 ```
 ___
 [Étape suivante : Chroot](./04-chroot.md)
