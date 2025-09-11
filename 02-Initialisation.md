@@ -80,10 +80,12 @@ Si t'en a une et pas de co c'est le réseau le problème, sinon recommence.
 
 ## Date et heure
 
-Pense a configurer l'heure:
+Pense a configurer l'heure, remplace tz par ta timezone. Par exemple avec Europe/Paris si tu es en France.
 ```sh
-$: timedatectl
+$: timedatectl set-timezone tz
 ```
+
+
 
 
 [Suite: Partitionnement](./03-partitionnement.md)
