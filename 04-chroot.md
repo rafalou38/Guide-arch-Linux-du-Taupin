@@ -80,7 +80,12 @@ $: vim /etc/hostname
 ```
 
 ##### Installation du boot-loader
-=> Grub
+=> ```sh 
+$: pacman -S grub efibootmgr
+
+$: grub-install --target=x86_64-efi --efi-directory=boot/EFI --bootloader-id=GRUB --modules="tpm" --disable-shim-lock
+
+$: grub-mkconfig -o /boot/grub/grub.cfg```
 
 
 #### Config réseau
