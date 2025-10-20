@@ -96,8 +96,12 @@ Pour la configuration réseau il y a plusieurs options :
 - NetworkManager avec un GUI pour se connecter aux réseaux 
 - IWD avec son interface en ligne de commande `iwctl`, plus compliqué à utiliser
 
-=> NetworkManager
-=> IWD
+<details>
+<summary>NetworkManager</summary>
+</details>
+<details>
+<summary>IWD</summary>
+</details>
 
 #### Création de l'utilisateur
 => user/groups/passwd
