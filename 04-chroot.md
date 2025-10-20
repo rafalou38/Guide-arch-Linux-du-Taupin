@@ -28,6 +28,7 @@ $: mount /dev/part /mnt/home
 Ici, on va installer tous les packages de base, si tu t'y connais, tu peux en ajouter dès maintenant et choisir ton editeur, shell ect.
 
 => Choisis l'un: amd-ucode ou intel-ucode en fonction de ton CPU.
+
 => Tu auras besoin d'un éditeur de texte, **Vim** et **Nano** sont standards **msedit** plus moderne et intuitif, tu peux choisir de mettre ceux que tu souhaites.
 
 ```sh
@@ -80,6 +81,7 @@ $: vim /etc/hostname
 ```
 
 ##### Installation du boot-loader
+Il est recommandé d'utiliser GRUB en tant que boot manager, c'est en tout cas l'installation qui est présentée ici.
 ```sh 
 $: pacman -S grub efibootmgr
 
@@ -88,10 +90,15 @@ $: grub-install --target=x86_64-efi --efi-directory=boot/EFI --bootloader-id=GRU
 $: grub-mkconfig -o /boot/grub/grub.cfg
 ```
 
+#### Configuration réseau
+Pour la configuration réseau il y a plusieurs options : 
 
-#### Config réseau
+- NetworkManager avec un GUI pour se connecter aux réseaux 
+- IWD avec son interface en ligne de commande `iwctl`, plus compliqué à utiliser
+
 => NetworkManager
 => IWD
+
 #### Création de l'utilisateur
 => user/groups/passwd
 => Root
