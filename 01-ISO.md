@@ -18,7 +18,7 @@ Si tu es parano ou que tu as une co de merde [vérifie la signature](https://wik
 
 Sur **Windows** utilise [balena etcher](https://etcher.balena.io/) ou [rufus](https://rufus.ie/)
 
-Sur **Linux**, trouve l'id de ta clé et vérifie qu'elle est pas montée
+Sur **Linux**, trouve l'id de ta clé et vérifie qu'elle n'est pas montée
 ```sh
 $: lsblk
 ```
@@ -27,7 +27,7 @@ Et puis
 $: sudo cp ~/Downloads/arch.iso /dev/sd[id de la clé]
 ```
 ___
-Enfin tu branches la clé dans le pc et redémare.
+Enfin tu branches la clé dans le pc et redémarre.
 
 Pendant qu'il s'allume spam les touches `Echap`, `Supr`, `F11`, `F12` (ça dépend du pc, cherche ton modèle pour être sur ou vas y au talent)
 
