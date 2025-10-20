@@ -18,7 +18,7 @@ Si t'es parano ou que t'as une co de merde [vérifie la signature](https://wiki.
 
 Sur **Windows** utilise [balena etcher](https://etcher.balena.io/) ou [rufus](https://rufus.ie/)
 
-Si t'es sur **Linux** trouve l'id de ta clé et vérifie qu'elle est pas montée
+Sur **Linux**, trouve l'id de ta clé et vérifie qu'elle est pas montée
 ```sh
 $: lsblk
 ```
@@ -42,4 +42,4 @@ Soit tu te retrouve dans le **menu de boot** avec :
 2. UEFI Device Arch...
 Tu choisis bien sûr Arch et si ça marche pas faut désactiver secure boot dans le BIOS/UEFI.
 
-[Suite de l'installation](./02-Initialisation.md)
+[Suite de l'installation](./02-Initialisation.md).
