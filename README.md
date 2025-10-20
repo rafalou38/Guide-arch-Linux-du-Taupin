@@ -1,6 +1,6 @@
 # Guide Arch Linux
 
-L'objectif de ce guide est d'introduire à l'installation d'Arch Linux. Il a été conçu pour un public Français.
+L'objectif de ce guide est d'introduire à l'installation d'Arch Linux. Il a été conçu pour un public parlant le Français.
 
 [Début du guide](./00-Index.md).
 
