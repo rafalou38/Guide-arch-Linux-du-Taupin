@@ -2,7 +2,7 @@
 
 ## Téléchargement
 
-Via Torrent (t'est un bon):
+Via Torrent:
 ```
 magnet:?xt=urn:btih:7920acc28f0ec4d75ac0e0edd82789092cf8ded1&dn=archlinux-2025.09.01-x86_64.iso
 ```
@@ -12,7 +12,7 @@ Via http (prendre le fichier x86_64.iso):
 https://archlinux.mirrors.ovh.net/archlinux/iso/latest/
 ```
 
-Si t'es parano ou que t'as une co de merde [vérifie la signature](https://wiki.archlinux.org/title/Installation_guide#Verify_signature) de l'iso.
+Si tu es parano ou que tu as une co de merde [vérifie la signature](https://wiki.archlinux.org/title/Installation_guide#Verify_signature) de l'iso.
 
 ## Burn
 
