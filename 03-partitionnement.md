@@ -98,13 +98,12 @@ Pour sa **taille**
 1. Si tu as beaucoup de place libre, égale à la RAM
 2. Sinon, tu peux réduire mais pas moins de 4Gb
 
-Dis toi que pour l'hibernation, tout le contenu de la RAM va être copié dans le SWAP.
+Dis toi que pour l'hibernation, tout le contenu de la RAM va être copié dans la SWAP.
 Si tu as 32 ou 16 G de RAM, elle sera compressée donc tu peux mettre un peu moins.
 
 
 ##### /home
-Le **dossier utilisateur** permet de séparer les fichiers système des fichiers utilisateur.
-Sert surtout si tu as un problème avec le système ou que tu veux changer de distro: la partition `/home` peut rester intacte.
+Le **dossier utilisateur** permet de séparer les fichiers système des fichiers utilisateur. Cette partition sert surtout si tu as un problème avec le système ou que tu veux changer de distro: la partition `/home` peut rester intacte.
 
 Pour la **taille**,
 Si vous avez un `/home`
@@ -116,7 +115,7 @@ Tout le reste peut partir dans `/home`.
 
 
 ## Partitionnement
-Ça y est tu as choisi ce que t'allait faire, c'est le moment.
+Ça y est tu as choisi ce que tu allais faire, c'est le moment.
 
 ```sh
 $: fdisk /dev/sdX
@@ -140,16 +139,16 @@ Cherche le type qui te semble le plus adapté':
 `swap` pour la swap
 et `linux` pour les autres.
 
-Si systeme EFI (standard sur les PC recents) la partition boot doit être du type `EFI system`
+Si système EFI (standard sur les PC récents) la partition boot doit être du type `EFI system`
 
-Sinon `BIOS boot` pour les systemes BIOS avec GPT.
+Sinon `BIOS boot` pour les systèmes BIOS avec GPT.
 
 Enfin, affiche les changements avec `p`, annule avec `q` ou enregistre avec `w`.
 
 
 ## Formatage
 ```sh
-# Avec bien sur les bons ids de partition et de disque
+# Avec bien sûr les bons ids de partition et de disque
 $: mkfs.ext4 /dev/partition_root
 $: mkfs.ext4 /dev/partition_home
 $: mkfs.fat -F 32 /dev/partition_boot
