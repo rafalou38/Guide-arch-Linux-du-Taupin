@@ -17,7 +17,7 @@ Tu cherches le chemin du disque
 
 S'il y a des `p1`, `p2`, ... c'est les partitions du disque (là où sont les données) sinon c'est que le disque est vide.
 
-exemple pour un système linux:
+Exemple pour un système linux:
 ```
 nvme0n1     259:0    0 931.5G  0 disk
 ├─nvme0n1p1 259:1    0     1G  0 part /boot/efi
@@ -25,10 +25,10 @@ nvme0n1     259:0    0 931.5G  0 disk
 └─nvme0n1p3 259:3    0 914.5G  0 part /
 ```
 
-## Récupére tes fichiers
-Si c'est déjà fait ou que t'en a pas, saute cette étape
+## Récupère tes fichiers
+Si c'est déjà fait ou que tu n'en as pas, saute cette étape.
 
-Sinon, trouve d'abord la partition qui a tes fichiers
+Sinon, trouve d'abord la partition où sont tes fichiers
 Puis fais
 ```sh
 $: mkdir /mnt/part
@@ -44,10 +44,10 @@ Pense à **un-mount** avant de continuer
 
 # ⚠️ Oui c'est bien umount et pas unmount
 $: umount /mnt/part
-$: umount /mnt/usb # Si t'as monté une clé et que tu l'as mis dans USB
+$: umount /mnt/usb # Si tu as monté une clé et que tu l'as mis dans USB.
 
 # Supprime aussi tes dossiers dans /mnt
-# ⚠️ Vérifie qu'ils sont vide pour pas suprimer tes fichiers
+# ⚠️ Vérifie qu'ils sont vides pour pas supprimer tes fichiers.
 $: rm -r /mnt/part
 $: rm -r /mnt/usb
 ```
@@ -60,19 +60,19 @@ Il faut d'abord choisir comment tu veux le formater:
 2. Quelles partitionnement appliquer au disque.
 
 ### Format
-Pour les données: EXT4 est le plus simple
+Pour les données: EXT4 est le plus simple.
 
-Btrfs si t'est un peu fou.
+Btrfs si tu es un peu fou.
 > Btrfs is a modern copy on write (COW) file system for Linux aimed at implementing advanced features while also focusing on fault tolerance, repair and easy administration.
 
-En gros t'as des fonctionnalités en plus qui le rendent plus safe mais c'est un bordel à comprendre et un peu plus lent du coup.
+En gros tu as des fonctionnalités en plus qui le rendent plus safe mais c'est un bordel à comprendre et un peu plus lent du coup.
 
 ### Partitions
 #### Obligatoires
 
 | Partition   | Format | Nom              | Taille                                 |
 | ----------- | ------ | ---------------- | -------------------------------------- |
-| `/`         | EXT4   | Racine           | Tout le reste, moins si `/home` a part |
+| `/`         | EXT4   | Racine           | Tout le reste, moins si `/home` à part |
 | `/boot/EFI` | FAT32  | Fichiers de boot | 500 Mb                                 |
 
 #### Optionnel
@@ -103,44 +103,44 @@ Si tu as 32 ou 16 G de RAM, elle sera compressée donc tu peux mettre un peu moi
 
 
 ##### /home
-Le **dossier utilisateur** permet de séparer les fichiers systeme des fichiers utilisateur.
-Sert surtout si t'a un problème avec le système ou que tu veux changer de distro: la partition `/home` peut rester intacte.
+Le **dossier utilisateur** permet de séparer les fichiers système des fichiers utilisateur.
+Sert surtout si tu as un problème avec le système ou que tu veux changer de distro: la partition `/home` peut rester intacte.
 
 Pour la **taille**,
 Si vous avez un `/home`
 
 pour `/`, prévoir **25Gb-30Gb**, plus si vous prévoyez d'installer **beaucoup** d'applications.
-Pas besoin de plus de **80Gb** (c'est ce que j'ai)
+Pas besoin de plus de **80Gb** (c'est ce que j'ai).
 
-Tout le reste peut partir dans `/home`
+Tout le reste peut partir dans `/home`.
 
 
 ## Partitionnement
-ça y est t'a choisi ce que t'allait faire, c'est le moment.
+Ça y est tu as choisi ce que t'allait faire, c'est le moment.
 
 ```sh
 $: fdisk /dev/sdX
 ```
-Choix de du type de table de partiton: GPT ou MBR
-**GPT** est plus moderne et doiti etre choisi dans la plus part des cas.
+Choix du type de table de partiton: GPT ou MBR
+**GPT** est plus moderne et doit être choisi dans la plupart des cas.
 Tapper `g`.
 `o` pour MBR.
 
 Pour créer un partition, tappe `n`
 S'il demande le type de partiton: primary `p` pour toutes.
-Laisser le numero par default.
+Laisse le numéro par défaut.
 
-Pour chaque partition il demande la position du debut de la partition et de la fin. Laisser debut par defaut et pour la fin utiliser +4G pour une partition de 4 Go (+taille{M,G,T,P})
+Pour chaque partition il demande la position du début de la partition et de la fin. Laisser le début par défaut et pour la fin utiliser +4G pour une partition de 4 Go (+taille{M,G,T,P}).
 
-### Types de partition
-Utilise `t` pour changner le type de chaque partition affiche les avec `L`.
-Cherche le type qui te semble le plus adapte':
+### Types de partitions
+Utilise `t` pour changner le type de chaque partition, affiche les avec `L`.
+Cherche le type qui te semble le plus adapté':
 `uefi` pour ESP (partiton boot)
-`home` pour la paartition home
+`home` pour la partition home
 `swap` pour la swap
 et `linux` pour les autres.
 
-Si systeme EFI (standard sur les PC recents) la partition boot doditi etre `EFI system`
+Si systeme EFI (standard sur les PC recents) la partition boot doit être du type `EFI system`
 
 Sinon `BIOS boot` pour les systemes BIOS avec GPT.
 
@@ -153,7 +153,7 @@ Enfin, affiche les changements avec `p`, annule avec `q` ou enregistre avec `w`.
 $: mkfs.ext4 /dev/partition_root
 $: mkfs.ext4 /dev/partition_home
 $: mkfs.fat -F 32 /dev/partition_boot
-# La partition swap n'a pas besoin d'etre formate'e
+# La partition swap n'a pas besoin d'etre formatée
 ```
 ___
-[Étape suivante : Chroot](./04-chroot.md)
+[Étape suivante : Chroot](./04-chroot.md).
