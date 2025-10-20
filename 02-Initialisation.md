@@ -1,10 +1,10 @@
 # Pré-configuration
-Ça y est t'es sur Arch, dans un environnement temporaire dit "live".
+Ça y est tu es sur Arch, dans un environnement temporaire dit "live".
 Tu est **root** donc pas besoin de `sudo`.
 Avant de continuer il faut configurer le clavier, l'internet et l'heure.
 
 ## Clavier
-Si t'as un clavier qwerty c'est bon, sinon tape la commande :
+Si tu as un clavier qwerty c'est bon, sinon tape la commande :
 ```sh
 $: loadkeys fr
 ```
@@ -13,7 +13,7 @@ $: loadkeys fr
 ## Connexion internet
 Plusieurs options s'offrent à toi:
 1. Tu branches un cable Ethernet
-2. Tu connectes ton tel et tu fais un partage de co par USB
+2. Tu connectes ton tel et tu fais un partage de connexion par USB
 
 Sinon, **bienvenue en enfer**:
 <details>
@@ -43,7 +43,7 @@ $: iwctl
 
 
 
-### Check si ça marche
+### Vérifie si ça marche
 ```
 ping ping.archlinux.org
 ```
@@ -71,16 +71,16 @@ Puis
 ```
 ip a
 ```
-Pour voir si t'a une IP (sous la forme `192.168.1.X` si t'est sur un réseau normal et un truc chelou sinon).
+Pour voir si tu as une IP (sous la forme `192.168.1.X` si tu es sur un réseau normal et un truc chelou sinon).
 
-Si t'en a une et pas de co c'est le réseau le problème, sinon recommence.
+Si tu en as une et pas de connexion c'est le réseau le problème, sinon recommence.
 
 </details>
 
 
 ## Date et heure
 
-Pense a configurer l'heure, remplace tz par ta timezone. Par exemple avec Europe/Paris si tu es en France.
+Pense à configurer l'heure, remplace tz par ta timezone. Par exemple avec Europe/Paris si tu es en France.
 ```sh
 $: timedatectl set-timezone tz
 ```
@@ -88,4 +88,4 @@ $: timedatectl set-timezone tz
 
 
 
-[Suite: Partitionnement](./03-partitionnement.md)
+[Suite: Partitionnement](./03-partitionnement.md).
