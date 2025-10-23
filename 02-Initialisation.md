@@ -18,7 +18,7 @@ Plusieurs options s'offrent à toi:
 Sinon, **bienvenue en enfer**:
 <details>
 
-<summary>(connection WIFI)</summary>
+<summary>(connection via WIFI)</summary>
 
 ### WIFI (iwctl)
 Tu dois utiliser l'outil `iwctl`
@@ -28,7 +28,8 @@ $: iwctl
 #### Option manuelle
 ```c
 [iwd]# device list
-[iwd]# device name set-property Powered on
+// Remplace <name> par le nom du device (c'est souvent wlan0)
+[iwd]# device <name> set-property Powered on
 [iwd]# station <name> scan
 [iwd]# station <name> get-networks
 [iwd]# station <name> connect SSID
