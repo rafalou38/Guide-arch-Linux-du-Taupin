@@ -104,10 +104,18 @@ Pour la configuration réseau il y a plusieurs options :
 </details>
 
 #### Création de l'utilisateur
-=> user/groups/passwd
-=> Root
-#### Choix du bureau
-=> KDE plasma
-=> Hyprland
+Utilise la commande ```passwd``` pour créer le mot de passe de l'utilisateur root. 
 
+Crées toi ensuite un utilisateur via cette commande :
+```sh
+useradd -m nom-de-l-utilisateur
+```
+#### Choix du bureau
+Il est possible de complètement customiser son bureau sur Arch, je présente ici deux options parmis les plus populaires mais il existe aussi d'autres packages tels que [xfce](https://wiki.archlinux.org/title/Xfce) ou encore [xmonad](https://wiki.archlinux.org/title/Xmonad). Voici ci-dessous des instructions pour installer Hyprland ou KDE Plasma : 
+<details>
+<summary>Hyprland</summary>
+</details>
+<details>
+<summary>KDE Plasma</summary>
+</details>
 
