@@ -18,7 +18,6 @@ $: mount /dev/part /mnt/boot/EFI
 $: swapon /dev/part
 
 # Si /home
-
 $: mkdir /mnt/home
 $: mount /dev/part /mnt/home
 ```
@@ -81,7 +80,7 @@ $: vim /etc/hostname
 ```
 
 ##### Installation du boot-loader
-Il est recommandé d'utiliser GRUB en tant que boot manager, c'est en tout cas l'installation qui est présentée ici.
+Il est recommandé d'utiliser GRUB en tant que boot load, c'est en tout cas l'installation qui est présentée ici.
 ```sh 
 $: pacman -S grub efibootmgr
 
