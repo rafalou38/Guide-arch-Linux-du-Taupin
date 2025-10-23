@@ -98,6 +98,7 @@ Pour la configuration réseau il y a plusieurs options :
 
 <details>
 <summary>NetworkManager</summary>
+=> TODO
 </details>
 <details>
 <summary>IWD</summary>
@@ -151,8 +152,10 @@ $: useradd -m nom-de-l-utilisateur
 Il est possible de complètement customiser son bureau sur Arch, je présente ici deux options parmis les plus populaires mais il existe aussi d'autres packages tels que [xfce](https://wiki.archlinux.org/title/Xfce) ou encore [xmonad](https://wiki.archlinux.org/title/Xmonad). Voici ci-dessous des instructions pour installer Hyprland ou KDE Plasma : 
 <details>
 <summary>Hyprland</summary>
+=> TODO
 </details>
 <details>
 <summary>KDE Plasma</summary>
+=> TODO
 </details>
 
