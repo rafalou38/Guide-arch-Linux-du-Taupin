@@ -15,6 +15,7 @@ $: mkdir /mnt/boot/EFI
 $: mount /dev/part /mnt/boot/EFI
 
 # Si SWAP
+$: mkswap /dev/part
 $: swapon /dev/part
 
 # Si /home
