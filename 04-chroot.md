@@ -33,7 +33,7 @@ Ici, on va installer tous les packages de base, si tu t'y connais, tu peux en aj
 
 ```sh
 $: pacstrap -K /mnt base linux linux-firmware \
-	[amd-ucode/intel-ucode] fsck \
+	[amd-ucode/intel-ucode] \
 	nano vim msedit \
 	man-db man-pages texinfo
 ```
