@@ -93,53 +93,9 @@ $: grub-mkconfig -o /boot/grub/grub.cfg
 #### Configuration réseau
 Pour la configuration réseau il y a plusieurs options : 
 
-- NetworkManager avec un GUI pour se connecter aux réseaux 
-- IWD avec son interface en ligne de commande `iwctl`, plus compliqué à utiliser
-
-<details>
-<summary>NetworkManager</summary>
-=> TODO
-</details>
-<details>
-<summary>IWD</summary>
-
-Installe d'abord iwd :
-```sh
-$: pacman -S iwd
-```
-
-Ensuite, active les services nécessaires :
-```sh
-$: systemctl enable iwd
-$: systemctl enbable systemd-networkd
-$: systemctl enable systemd-resolved
-```
-
-Il faut maintenant config iwd pour pouvoir se connecter à un réseau wifi, pour ethernet on le fera plus tard. On va donc créer le fichier de configuration pour iwd :
-```sh
-$: touch /etc/iwd/main.conf
-$: vim /etc/iwd/main.conf
-```
-Ensuite, colle ça dans ce fichier : 
-```sh
-[General]
-EnableNetworkConfiguration=true
-
-[Network]
-NameResolvingService=systemd
-```
-Enfin, restart iwd.
-Pour te connecter à un WIFI :
-```c
-[iwd]# device list
-// Remplace <name> en dessous par le nom du device (c'est souvent wlan0)
-[iwd]# device <name> set-property Powered on
-[iwd]# station <name> scan
-[iwd]# station <name> get-networks
-[iwd]# station <name> connect SSID
-```
-Pour la connexion ethernet, on va utiliser systemd. => TODO 
-</details>
+- NetworkManager avec un GUI pour se connecter aux réseaux -> guide [ici](https://github.com/rafalou38/Guide-arch-Linux-du-Taupin/blob/main/packages/networkManager.md)
+- IWD avec son interface en ligne de commande `iwctl`, plus compliqué à utiliser -> guide [ici](https://github.com/rafalou38/Guide-arch-Linux-du-Taupin/blob/main/packages/iwd.md)
+- En complément d'IWD, il est conseillé d'utiliser un des packages systemd pour la connexion ethernet, le guide est disponible [ici](https://github.com/rafalou38/Guide-arch-Linux-du-Taupin/blob/main/packages/systemd-network.md)
 
 #### Création de l'utilisateur
 Utilise la commande ```passwd``` pour créer le mot de passe de l'utilisateur root. 
@@ -149,13 +105,6 @@ Crées toi ensuite un utilisateur via cette commande :
 $: useradd -m nom-de-l-utilisateur
 ```
 #### Choix du bureau
-Il est possible de complètement customiser son bureau sur Arch, je présente ici deux options parmis les plus populaires mais il existe aussi d'autres packages tels que [xfce](https://wiki.archlinux.org/title/Xfce) ou encore [xmonad](https://wiki.archlinux.org/title/Xmonad). Voici ci-dessous des instructions pour installer Hyprland ou KDE Plasma : 
-<details>
-<summary>Hyprland</summary>
-=> TODO
-</details>
-<details>
-<summary>KDE Plasma</summary>
-=> TODO
-</details>
+Il est possible de complètement customiser son bureau sur Arch, je présente ici deux options parmis les plus populaires mais il existe aussi d'autres packages tels que [xfce](https://wiki.archlinux.org/title/Xfce) ou encore [xmonad](https://wiki.archlinux.org/title/Xmonad). 
 
+Je conseille personnellement KDE Plasma, simple à utiliser, un guide d'installation est disponible [ici](https://github.com/rafalou38/Guide-arch-Linux-du-Taupin/blob/main/packages/kde-plasma.md). Si tu préfères un Desktop basé sur le tiling, je conseille Hyprland, pour lequel un guide est disponible [ici](https://github.com/rafalou38/Guide-arch-Linux-du-Taupin/blob/main/packages/hyprland.md).
