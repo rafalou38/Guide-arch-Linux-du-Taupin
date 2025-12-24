@@ -1,3 +1,5 @@
+Ci-dessous est présentée l'installation et la configuration basique d'IDW.
+
 Installe d'abord iwd :
 ```sh
 $: pacman -S iwd

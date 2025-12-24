@@ -16,4 +16,5 @@ L'objectif de ce guide est d'introduire à l'installation d'Arch Linux et de que
     - [NetworkManager](https://github.com/rafalou38/Guide-arch-Linux-du-Taupin/blob/main/packages/networkManager.md)
 
 PS: Nous avons choisi un language peu formel dans un objectif d’accessibilité. Si ça ne te convient pas, passe plutôt par l'[Arch Wiki](https://wiki.archlinux.org/title/Installation_guide#Verify_signature).
+
 PSS: Ce guide a été update à la date du 23/10/2025 pour la dernière fois, il n'est pas garanti que son contenu reste a jour à perpétuité.
